@@ -1,7 +1,6 @@
 ### ЗАДАЧА 1 + проранжировать акции по убыванию количества покупателей
 WITH join_buyers AS ( 
-	SELECT 
-			MA.Name_MA,
+	SELECT  MA.Name_MA,
 			Clients.Client_ID
 	FROM MA
 	LEFT JOIN Clients
@@ -37,7 +36,7 @@ accepted_orders AS (
 	WHERE t1.Status = 'a'
 ),
 join_orders AS (
-	SELECT t1.id,
+	SELECT  t1.id,
 			t1.moment as moment_accepted,
 			t2.moment as moment_shipped
 	FROM accepted_orders t1
@@ -45,7 +44,7 @@ join_orders AS (
 		ON t1.id = t2.id
 ),
 diff_date_orders AS (
-	SELECT t1.*,
+	SELECT  t1.*,
 			datefiff(dd, moment_accepted, moment_shipped) as date_diff
 	FROM join_orders t1
 )
@@ -57,7 +56,7 @@ WHERE t1.date_diff > 3;
 
 ### ЗАДАЧА 3 + посчитать накопительную сумму для акций, отсортированных по алфавиту
 WITH sum_ma AS (
-	SELECT MA.Name_MA,
+	SELECT  MA.Name_MA,
 			SUM(Orders.Amnt) as summ_orders
 	FROM MA
 	LEFT JOIN Orders
