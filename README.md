@@ -10,7 +10,7 @@
 
 ##### Структура:
 * [AviasalesParser.py](https://github.com/samaary/code_example/blob/master/Python/AviasalesParser.py) - класс MyAviasalesParser
-* [Test AviasalesParser.ipynb] (https://github.com/samaary/code_example/blob/master/Python/Test%20AviasalesParser.ipynb) - Пример использования модуля, минимальный анализ данных, полученных с сайта
+* [Test AviasalesParser.ipynb](https://github.com/samaary/code_example/blob/master/Python/Test%20AviasalesParser.ipynb) - Пример использования модуля, минимальный анализ данных, полученных с сайта
 
 ##### Используемые бибилиотеки:
 * AviasalesParser
