@@ -1,10 +1,7 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
 from collections import Counter
 import requests
-
-
 
 class MyAviasalesParser:
     """ 
