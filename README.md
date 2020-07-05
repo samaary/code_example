@@ -6,7 +6,7 @@
 -----------------------------------
 ### Файл AviasalesParser.py
 
-В данном файле создается класс MyAviasalesParser, в котором происходит подключение к API Aviasales.ru и парсинг ответов. Ответы приводятся к виду, в котором удобно будет провести минимальный анализ данных.
+В файле создается класс MyAviasalesParser, в котором происходит подключение к API Aviasales.ru и парсинг ответов. Ответы приводятся к виду, в котором удобно будет провести минимальный анализ данных.
 
 ##### Структура:
 * [AviasalesParser.py](https://github.com/samaary/code_example/blob/master/Python/AviasalesParser.py) - класс MyAviasalesParser
