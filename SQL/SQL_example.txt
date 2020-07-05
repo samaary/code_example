@@ -74,31 +74,3 @@ SELECT  t1.Name_MA,
 		SUM(t1.summ_orders) OVER(ORDER BY t1.Name_MA) as summ_cumulative
 FROM filter_ma t1;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
