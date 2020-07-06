@@ -12,28 +12,31 @@ class MyAviasalesParser:
     Connection to the REST API is established with the use of token.
     """
     
-    def __init__(self, url):
-        try:
-            self.__req = requests.get(url, timeout = 10).json()
-        
-        except requests.exceptions.ReadTimeout:
-            print('Read timeout occured')
-        except requests.exceptions.ConnectTimeout:
-            print('Connection timeout occured')
-        except requests.exceptions.ConnectionError:
-            print('Connection Error occured')
-        except requests.exceptions.HTTPError as err:
-            print('HTTP Error occured')
+    def __init__(self):
+        self.__req = None
     
-    def get_data(self):
+    def get_request(self, url):
         """
-        Gets needed data from the rest request
+        Gets request from Aviasales API and returns only needed data
         """
-        if self.__req is not None or self.__req.status_code:
-            data = self.__req['data']
-            return data
+        if self.__req is None:
+            try:
+                self.__req = requests.get(url, timeout = 10).json()
+
+            except requests.exceptions.ReadTimeout:
+                print('Read timeout occured')
+            except requests.exceptions.ConnectTimeout:
+                print('Connection timeout occured')
+            except requests.exceptions.ConnectionError:
+                print('Connection Error occured')
+            except requests.exceptions.HTTPError as err:
+                print('HTTP Error occured')
+                
+            return self.__req['data']
         else:
-            print('No data recieved')
+            print('No data recived')
+            print('HTTP success: ', self.__req['success'])
+    
     
     @staticmethod
     def number_of_chages_value(data):
